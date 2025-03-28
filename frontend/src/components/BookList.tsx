@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react';
-import { Book } from './types/Book';
+import { Book } from '../types/Book';
+import { useNavigate } from 'react-router-dom';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
   const [pageSize, setPageSize] = useState<number>(10);
   const [pageNum, setPageNum] = useState<number>(1);
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
-  const [sortAscending, setSortAscending] = useState<boolean>(true);
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProjects = async () => {
+      const categoryParams = selectedCategories
+        .map((cat) => `BookCategory=${encodeURIComponent(cat)}`)
+        .join('&');
+
       const response = await fetch(
-        `https://localhost:8005/api/Store/AllBooks?pageHowMany=${pageSize}&pageNum=${pageNum}`
+        `https://localhost:8005/api/Store/AllBooks?pageHowMany=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`
       );
       const data = await response.json();
       setBooks(data.books);
@@ -22,27 +26,10 @@ function BookList() {
     };
 
     fetchProjects();
-  }, [pageSize, pageNum, totalItems]);
-
-  const sortByTitle = () => {
-    const sortedBooks = [...books].sort((a, b) => {
-      if (a.title < b.title) return sortAscending ? -1 : 1;
-      if (a.title > b.title) return sortAscending ? 1 : -1;
-      return 0;
-    });
-
-    setBooks(sortedBooks);
-    setSortAscending(!sortAscending); // Toggle sorting order
-  };
-
+  }, [pageSize, pageNum, totalItems, selectedCategories]);
 
   return (
     <>
-      <h1>Books</h1>
-      <button className="btn btn-primary mb-3" onClick={sortByTitle}>
-        Sort by Title {sortAscending ? "▲" : "▼"}
-      </button>
-      <br />
       {books.map((b) => (
         <div id="bookCard" className="card" key={b.bookID}>
           <h3 className="card-title">{b.title}</h3>
@@ -81,6 +68,12 @@ function BookList() {
                 {b.price}
               </li>
             </ul>
+            <button
+              className="btn btn-success"
+              onClick={() => navigate(`/cart`)}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       ))}
