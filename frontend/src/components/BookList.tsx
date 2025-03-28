@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Book } from '../types/Book';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
@@ -9,6 +10,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -70,10 +72,14 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
             </ul>
             <button
               className="btn btn-success"
-              onClick={() => navigate(`/cart`)}
+              onClick={() => {
+                addToCart({ ...b, quantity: 1 });
+                navigate(`/cart`);
+              }}
             >
               Add to Cart
             </button>
+
           </div>
         </div>
       ))}

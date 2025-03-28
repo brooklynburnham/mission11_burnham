@@ -1,26 +1,22 @@
-import { useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
-import { CartItem } from '../types/CartItem';
+import React, { useContext } from "react";
+import { useCart, CartItem } from "../context/CartContext";
 
+const Cart: React.FC = () => {
+  const { cartItems } = useCart();
 
-function CartPage() {
-  const navigate = useNavigate();
-  const { cartItems, removeFromCart } = useCart();
-
-    const total = cartItems.reduce(
+  const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
-
   return (
-    <div>
-      <h2>Your cart:</h2>
-      <div>
-        {cartItems.length == 0 ? (
-          <p>Your cart is empty.</p>
-        ) : (
-            <table className="table table-bordered">
+    <div className="container my-4">
+      <h2 className="mb-4">🛒 Shopping Cart</h2>
+      {cartItems.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <>
+          <table className="table table-bordered">
             <thead className="table-light">
               <tr>
                 <th>Title</th>
@@ -40,11 +36,10 @@ function CartPage() {
               ))}
             </tbody>
           </table>
-        )}
-      </div>
-      <h4>Total: ${total.toFixed(2)}</h4>
-      <button>Checkout</button>
-      <button onClick={() => {
+          <h4>Total: ${total.toFixed(2)}</h4>
+          <button
+            className="btn btn-secondary mt-3"
+            onClick={() => {
               const savedState = localStorage.getItem("continueShoppingState");
 
               if (savedState) {
@@ -61,9 +56,14 @@ function CartPage() {
                 // fallback
                 window.location.href = "/";
               }
-            }}>Continue Browsing</button>
+            }}
+          >
+            ← Continue Shopping
+          </button>
+        </>
+      )}
     </div>
   );
-}
+};
 
-export default CartPage;
+export default Cart;
