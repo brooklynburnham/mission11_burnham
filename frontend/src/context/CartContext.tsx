@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 export interface CartItem {
   bookID: number;
@@ -11,7 +13,7 @@ export interface CartItem {
 interface CartContextType {
   cartItems: CartItem[];
   addToCart: (item: CartItem) => void;
-  removeFromCart: (bookID: number) => void;
+  removeFromCart: (bookID: number, title: string) => void;
   clearCart: () => void;
 }
 
@@ -54,11 +56,22 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     });
   };
 
-  const removeFromCart = (bookID: number) => {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.bookID !== bookID)
+  const removeFromCart = (bookID: number, title: string) => {
+    setCartItems((prevItems) => 
+      prevItems.filter((item) => item.bookID !== bookID) // ✅ Missing parenthesis added here
     );
+  
+    toast.error(`❌ Removed "${title}" from cart`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
   };
+  
+
 
   const clearCart = () => setCartItems([]);
 
@@ -70,4 +83,3 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     </CartContext.Provider>
   );
 };
-export default CartContext;
