@@ -1,20 +1,20 @@
 import { Book } from '../types/Book';
 
 interface FetchBookResponse {
-  Books: Book[];
-  totalNumProjects: number;
+  books: Book[];
+  totalNumBooks: number;
 }
 
 const API_URL = 'https://localhost:8005/api/Store';
 
-export const fetchProjects = async (
+export const fetchBooks = async (
   pageSize: number,
   pageNum: number,
   selectedCategories: string[]
 ): Promise<FetchBookResponse> => {
   try {
     const categoryParams = selectedCategories
-      .map((cat) => `BookTypes=${encodeURIComponent(cat)}`)
+      .map((cat) => `BookCategory=${encodeURIComponent(cat)}`)
       .join('&');
 
     const response = await fetch(
@@ -31,7 +31,7 @@ export const fetchProjects = async (
   }
 };
 
-export const addProject = async (newBook: Book): Promise<Book> => {
+export const addBook = async (newBook: Book): Promise<Book> => {
   try {
     const response = await fetch(`${API_URL}/Store/AddBook?`, {
       method: 'POST',
