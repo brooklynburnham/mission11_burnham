@@ -14,7 +14,7 @@ export const fetchBooks = async (
 ): Promise<FetchBookResponse> => {
   try {
     const categoryParams = selectedCategories
-      .map((cat) => `BookCategory=${encodeURIComponent(cat)}`)
+      .map((cat) => `bookCategory=${encodeURIComponent(cat)}`)
       .join('&');
 
     const response = await fetch(
@@ -33,7 +33,7 @@ export const fetchBooks = async (
 
 export const addBook = async (newBook: Book): Promise<Book> => {
   try {
-    const response = await fetch(`${API_URL}/Store/AddBook?`, {
+    const response = await fetch(`${API_URL}/AddBook?`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,16 +55,13 @@ export const updateBook = async (
   updatedBook: Book
 ): Promise<Book> => {
   try {
-    const response = await fetch(
-      `${API_URL}/Water/UpdateBook/${bookId}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedBook),
-      }
-    );
+    const response = await fetch(`${API_URL}/UpdateBook/${bookId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedBook),
+    });
 
     return await response.json();
   } catch (error) {
