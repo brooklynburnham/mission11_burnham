@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/Mission11.API.csproj": {}
+    "/Users/brook/mission11_burnham-3/backend/Mission11.API/Mission11.API.csproj": {}
   },
   "projects": {
-    "/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/Mission11.API.csproj": {
+    "/Users/brook/mission11_burnham-3/backend/Mission11.API/Mission11.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/Mission11.API.csproj",
+        "projectUniqueName": "/Users/brook/mission11_burnham-3/backend/Mission11.API/Mission11.API.csproj",
         "projectName": "Mission11.API",
-        "projectPath": "/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/Mission11.API.csproj",
+        "projectPath": "/Users/brook/mission11_burnham-3/backend/Mission11.API/Mission11.API.csproj",
         "packagesPath": "/Users/brook/.nuget/packages/",
-        "outputPath": "/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/obj/",
+        "outputPath": "/Users/brook/mission11_burnham-3/backend/Mission11.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/brook/.nuget/NuGet/NuGet.Config"
