@@ -259,3 +259,9 @@
 /Users/brook/Desktop/mission11_burnham/backend/Mission11.API/obj/Debug/net8.0/Mission11.API.pdb
 /Users/brook/Desktop/mission11_burnham/backend/Mission11.API/obj/Debug/net8.0/Mission11.API.genruntimeconfig.cache
 /Users/brook/Desktop/mission11_burnham/backend/Mission11.API/obj/Debug/net8.0/ref/Mission11.API.dll
+/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/bin/Debug/net8.0/publish/web.config
+/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/bin/Debug/net8.0/publish/appsettings.Development.json
+/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/bin/Debug/net8.0/publish/appsettings.json
+/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/bin/Debug/net8.0/publish/Mission11.API.deps.json
+/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/bin/Debug/net8.0/publish/Mission11.API.runtimeconfig.json
+/Users/brook/Desktop/mission11_burnham/backend/Mission11.API/bin/Debug/net8.0/publish/Mission11.API.staticwebassets.endpoints.json
