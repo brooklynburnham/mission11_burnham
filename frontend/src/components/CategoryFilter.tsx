@@ -14,7 +14,7 @@ function CategoryFiler({
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          'https://localhost:8005/api/Store/GetBookCategory'
+          'https://bookstore-burnham-backend.azurewebsites.net/api/Store/GetBookCategory'
         );
         const data = await response.json();
         console.log('Fetched Categories:', data);
