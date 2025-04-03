@@ -56,7 +56,7 @@ namespace Mission11.API.Controllers
             return Ok(newBook);
         }
 
-        [HttpPost("UpdateBook/{bookId}")]
+        [HttpPut("UpdateBook/{bookId}")]
         public IActionResult UpdateBook(int bookId, [FromBody] Book updateBook)
         {
             var existingBook = _bookContext.Books.Find(bookId);
