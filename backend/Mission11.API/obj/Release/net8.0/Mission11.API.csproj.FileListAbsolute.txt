@@ -131,12 +131,6 @@
 /Users/brook/Desktop/mission11_burnham/backend/Mission11.API/obj/Release/net8.0/ref/Mission11.API.dll
 /Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/appsettings.Development.json
 /Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/appsettings.json
-/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/web.config
-/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/appsettings.Development.json
-/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/appsettings.json
-/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/Mission11.API.deps.json
-/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/Mission11.API.runtimeconfig.json
-/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/Mission11.API.staticwebassets.endpoints.json
 /Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/Mission11.API.staticwebassets.endpoints.json
 /Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/Mission11.API
 /Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/Mission11.API.deps.json
@@ -266,3 +260,9 @@
 /Users/brook/mission11_burnham-3/backend/Mission11.API/obj/Release/net8.0/Mission11.API.pdb
 /Users/brook/mission11_burnham-3/backend/Mission11.API/obj/Release/net8.0/Mission11.API.genruntimeconfig.cache
 /Users/brook/mission11_burnham-3/backend/Mission11.API/obj/Release/net8.0/ref/Mission11.API.dll
+/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/web.config
+/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/appsettings.Development.json
+/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/appsettings.json
+/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/Mission11.API.deps.json
+/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/Mission11.API.runtimeconfig.json
+/Users/brook/mission11_burnham-3/backend/Mission11.API/bin/Release/net8.0/publish/Mission11.API.staticwebassets.endpoints.json
