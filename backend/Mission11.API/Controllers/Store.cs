@@ -80,7 +80,7 @@ namespace Mission11.API.Controllers
         {
             var book = _bookContext.Books.Find(bookId);
 
-            if (book != null)
+            if (book == null)
             {
                 return NotFound(new {message = "book not found"});
             }

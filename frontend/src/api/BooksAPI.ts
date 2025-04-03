@@ -70,10 +70,13 @@ export const updateBook = async (
   }
 };
 
-export const deleteBook = async (bookId: number): Promise<void> => {
+export const deleteBook = async (bookID: number): Promise<void> => {
   try {
-    const response = await fetch(`${API_URL}/DeleteBook/${bookId}`, {
+    const response = await fetch(`${API_URL}/DeleteBook/${bookID}`, {
       method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
     if (!response.ok) {
       throw new Error('Failed to delete Porject');
