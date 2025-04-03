@@ -75,7 +75,7 @@ namespace Mission11.API.Controllers
             return Ok(existingBook);
         }
 
-        [HttpPost("DeleteBook/{bookId}")]
+        [HttpDelete("DeleteBook/{bookId}")]
         public IActionResult DeleteBook(int bookId)
         {
             var book = _bookContext.Books.Find(bookId);
